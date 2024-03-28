@@ -1,4 +1,4 @@
- #include "FastLED.h"
+#include "FastLED.h"
 
 byte bright = 50; // luminosité des LEDs
 byte baza = 0;
@@ -20,18 +20,17 @@ void setup() {
   FastLED.addLeds<WS2812, L4, GRB>(leds4, NUM_LEDS).setCorrection(TypicalLEDStrip);
   FastLED.setBrightness(bright);
 }
+
 void loop() {
-  int echelle_basse = 1;
-  int echelle_haute = 130;
-  colorStrip(echelle_basse, echelle_haute, L1, CRGB::Red); // Rouge
-  colorStrip(echelle_basse, echelle_haute, L2, CRGB::Red); // Rouge
-  colorStrip(echelle_basse, echelle_haute, L3, CRGB::Blue); // Rouge
-  colorStrip(echelle_basse, echelle_haute, L4, CRGB::Blue); // Rouge
+  int echelle_basse = 0;
+  int echelle_haute = NUM_LEDS - 1;
+  colorStrip(echelle_basse, echelle_haute, leds1, CRGB::Red); // Rouge
+  colorStrip(echelle_basse, echelle_haute, leds2, CRGB::Red); // Rouge
+  colorStrip(echelle_basse, echelle_haute, leds3, CRGB::Blue); // Bleu
+  colorStrip(echelle_basse, echelle_haute, leds4, CRGB::Blue); // Bleu
+}
 
-  }
-
-
-void colorStrip(int startIndex, int endIndex, int pin, CRGB color) {
+void colorStrip(int startIndex, int endIndex, CRGB leds[], CRGB color) {
   for (int i = startIndex; i <= endIndex; i++) {
     leds[i] = color; // Définir la couleur des LEDs
   }
