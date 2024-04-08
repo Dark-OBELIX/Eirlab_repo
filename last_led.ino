@@ -1,5 +1,6 @@
 #include "FastLED.h"
 
+#define NUM_LEDS 150 // nombre de LEDs par bande
 #define L4 2 
 #define L3 4 
 #define L1 22  
@@ -29,6 +30,8 @@ void loop() {
       previousData = newData; 
       int echelle_basse = 0;
       int echelle_haute = NUM_LEDS - 1;
+      CRGB newData[NUM_LEDS];
+
       colorStrip(echelle_basse, echelle_haute, newData, CRGB::Red); // Rouge
     }
   }
