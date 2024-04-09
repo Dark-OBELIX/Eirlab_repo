@@ -1,0 +1,6 @@
+  - 3LED_pcb_serie_test.ino : Test de communication série avec 3 LEDs sur un PCB, sur les pins 13, 27 et 33. Prend des entrées L1, L2 et L3 et inverse l'état des LEDs (allumées/éteintes).
+  - 4legs.ino : Allume les bandeaux en mode multicouleur sur les pins 2, 4, 22 et 23.
+  - las_led.ino : Allume les bandeaux en fonction des informations du port série.
+  - switch_leg.ino : Code de test.
+  - switch_leg_megabot.ino : Code principal.
+  - IHM Python : Code de test pour établir les sections de bandeau et leur taille.
